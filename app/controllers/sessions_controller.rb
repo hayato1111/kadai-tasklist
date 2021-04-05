@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
@@ -12,6 +9,9 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'ログインに失敗しました。'
       render :new
     end
+  end
+  
+  def new
   end
 
   def destroy
