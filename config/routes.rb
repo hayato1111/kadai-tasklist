@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/create'
   root to: 'tasks#index'
   
-  resources :tasks
+  resources :tasks, only: [:create, :new, :edit, :show, :update, :destroy]
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
